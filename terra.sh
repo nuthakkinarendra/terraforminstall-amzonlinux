@@ -12,7 +12,7 @@ sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinu
 echo "Install Terraform from the new repository"
 sudo yum -y install terraform
 echo "terraform version"
-sudo terraform --version"
+sudo terraform -version"
 ##echo "download the awscli"
 ##curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 ##echo "unzip awscli"
