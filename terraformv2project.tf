@@ -7,15 +7,15 @@ terraform {
   }
 }
 
-# Configure the AWS Provider
-provider "aws" {
-  region = "ap-south-1"
+ Configure the AWS Provider
+ provider "aws" {
+ region = "ap-south-1"
 }
 
 resource "aws_instance" "web" {
   ami           = "ami-0287a05f0ef0e9d9a"
   instance_type = "t2.micro"
-# key_name = "terraform"
+  key_name = "terraform"
 
   tags = {
     Name = "version-v2"
@@ -24,7 +24,7 @@ resource "aws_instance" "web" {
   connection {
       type     = "ssh"
       user     = "ubuntu"
- #    private_key = file("terraform.pem")  # Update with the path to your private key
+      private_key = file("terraform.pem")  # Update with the path to your private key
       host     = aws_instance.web.public_ip
     }
   provisioner "remote-exec" {
