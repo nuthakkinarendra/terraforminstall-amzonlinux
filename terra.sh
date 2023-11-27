@@ -1,6 +1,6 @@
 #!/bin/bash
 ##################################
-# Author : Srikanth
+# Author : narendra
 # created date: 26.11.2023
 # Version: 1.0
 # Team : DevOps
