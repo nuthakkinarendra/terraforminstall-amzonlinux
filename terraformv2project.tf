@@ -13,7 +13,7 @@ provider "aws" {
 }
 
 resource "aws_instance" "web" {
-  ami           = "ami-02a2af70a66af6dfb"
+  ami           = "ami-0287a05f0ef0e9d9a"
   instance_type = "t2.micro"
 # key_name = "terraform"
 
