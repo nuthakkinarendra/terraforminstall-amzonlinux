@@ -1,10 +1,10 @@
 resource "aws_instance" "web" {
-  ami           = "ami-0fc5d935ebf8bc3bc"
+  ami           = "ami-02a2af70a66af6dfb"
   instance_type = "t2.micro"
   key_name = "terraform"
 
   tags = {
-    Name = "MYCSS-Template"
+    Name = "version-v2"
   }
 
   connection {
@@ -15,11 +15,11 @@ resource "aws_instance" "web" {
     }
   provisioner "remote-exec" {
     inline = [
-      "sudo apt-get update",
+      "sudo yum update",
       "sleep 5",
-      "sudo apt-get install nginx -y",
-      "sudo apt-get install zip -y",
-      "sudo apt-get install unzip -y",
+      "sudo yum install nginx -y",
+      "sudo yum install zip -y",
+      "sudo yum install unzip -y",
       "wget https://www.free-css.com/assets/files/free-css-templates/download/page296/mediplus-lite.zip",
       "sudo unzip mediplus-lite.zip",
       "sudo mv mediplus-lite /var/www/html/"
